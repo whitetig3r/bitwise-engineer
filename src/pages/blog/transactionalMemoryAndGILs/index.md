@@ -13,7 +13,7 @@ The Global Interpreter Lock or Giant VM Lock (GVL) is simply a VM-wide mutex tha
 
 _Sidenote_ : The drawbacks that come with GIL exist only on multi-threaded primarily CPU-bound applications written in Ruby (MRI) and are not as obvious with predominantly I/O bound applications because the GIL is released for any blocking I/O (database querying, HTTP requests and the like). 
 
-Evidently, experiments were undertaken to replace the GIL/GVL and observe the results.
+Following the developments and increased availability of multi-core processors, experiments were undertaken to replace the GIL/GVL and observe the results.
 
 The first approach was to use fine-grained locking with which came obtuse semantics. For those familiar with Java - the stark differences in semantics between programmer-authored mutexes or semaphores around critical sections and the simpler `synchronized` keyword are illustrative of how unfriendly semantics can make programs more error-prone.
 
@@ -34,7 +34,7 @@ Are there benefits to this approach over fine-grained locking? Probably! The ove
 - **Pro**: _Deadlocks_ can't really happen because no single thread can end up in a situation where it never releases a lock
 - **Con**: _Livelocks_ in large transactions as there could be constant rolling back and re-running (that's what optimism gets you &#128532). 
 
-Various combinations of data versioning strategies and conflict detection strategies (not discussed in this post but mainly of two types - _optimistic_ and _pessimistic_) yield two broad implementations of transactional memory - _Hardware Transactional Memory (HTM)_ and _Software Transactional Memory (STM)_ and more recently a third, _Hybrid Transactional Memory_.
+Various combinations of data versioning strategies and conflict detection strategies (not discussed in this post but are mainly of two types - _optimistic_ and _pessimistic_) yield two broad implementations of transactional memory - _Hardware Transactional Memory (HTM)_ and _Software Transactional Memory (STM)_ and more recently a third, _Hybrid Transactional Memory_.
 
 When _HTM_ was used in place of the GIL in Ruby's interpreter (CRuby/MRI), according to some recorded metrics by IBM Research, it was observed that Ruby on Rails applications experienced speed-ups of upto 1.2 times over the GIL. 
 
