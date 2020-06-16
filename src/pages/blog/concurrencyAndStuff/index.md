@@ -1,6 +1,6 @@
 ---
-title: 'Transactional Memory,GILs and Concurrency'
-date: '2020-06-15'
+title: 'Transactional Memory and GILs'
+date: '2020-06-16'
 ---
 In my first post, I said that concurrency in Ruby required a post of its own with a special mention of its implementation in MRI. This post will cover some core concepts of concurrency that have helped scripting languages, specifically Ruby, to become more performant in computationally intensive multi-threaded applications.
 
@@ -8,7 +8,7 @@ In my first post, I said that concurrency in Ruby required a post of its own wit
 The past few weeks have kept me quite busy with coursework and my class - "Comparative Study of Programming Languages" has had me appreciating the fact that most programming languages have distinguishable traits that make them an optimum choice for specific applications. For instance, Erlang is quite intuitive for applications requiring concurrency; LISP (and its dialects) for applications requiring efficient and effective processing of symbolic information (great for AI);
 C for system programming owing to its access to lower-level system APIs and so on.
 
-### What really is GIL?
+### What really is the GIL?
 The Global Interpreter Lock or Giant VM Lock (GVL) is simply a VM-wide mutex that a thread needs to acquire in order to run. In other words, every thread, though mapped to a kernel-level thread is still required to acquire the GIL before executing. Consequently, multi-threaded applications that are written in languages that have interpreters using this technique simply aren't being as resourceful or exploitative as they should, especially when running on increasingly ubiquitous multi-core processors. 
 
 _Sidenote_ : The drawbacks that come with GIL exist only on multi-threaded primarily CPU-bound applications written in Ruby (MRI) and are not as obvious with predominantly I/O bound applications because the GIL is released for any blocking I/O (database querying, HTTP requests and the like). 
