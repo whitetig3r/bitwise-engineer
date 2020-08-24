@@ -69,7 +69,7 @@ The [`parser.y`](https://github.com/ruby/ruby/blob/master/parse.y) file is a gra
 The function prototype:
 
 ```
-    static enum 
+    static enum
         yytokentype parser_yylex(struct parser_params *p);
 ```
 
@@ -146,9 +146,9 @@ It is quite a simple task to see tokenization in action. All that needs to be do
 **Each element in the output array consists of an array with 4 elements:**
 
 1. `[line_number, text_column_number]`
-2. `:the_token_type` as a Ruby Symbol *eg: `:on_nl, :on_kw`*
-3. The character(s) corresponding to the token *eg: `"\n", "end"`*
-4. The _state_ of the tokenizer as it iterates *eg: `EXPR_BEG, EXPR_CMDARG`* (defined in the `Ripper` Class)
+2. `:the_token_type` as a Ruby Symbol _eg: `:on_nl, :on_kw`_
+3. The character(s) corresponding to the token _eg: `"\n", "end"`_
+4. The _state_ of the tokenizer as it iterates _eg: `EXPR_BEG, EXPR_CMDARG`_ (defined in the `Ripper` Class)
 
 ### Some key aspects of tokenization:
 

@@ -22,7 +22,8 @@ export const TextBody = styled.div`
     overflow-x: scroll;
   }
 
-  ol, ul {
+  ol,
+  ul {
     padding-left: 1em;
   }
 
@@ -30,12 +31,12 @@ export const TextBody = styled.div`
     list-style-position: inside;
   }
 
-  li:not(:last-child)::after{
-    content: "blank line";
+  li:not(:last-child)::after {
+    content: 'blank line';
     color: transparent;
     display: block;
   }
-  
+
   @media (max-width: ${BREAKPOINT}px) {
     margin: 0 0 5vh 0;
   }
