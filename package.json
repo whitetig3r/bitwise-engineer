@@ -1,13 +1,11 @@
 {
-  "name": "lewis-gatsby-starter-blog",
-  "description": "A custom Gatsby starter template to start a blog or personal website.",
-  "author": "@lewislbr",
+  "name": "bitwise-engineer",
+  "description": "A software engineering blog using the starter at https://github.com/lewislbr/lewis-gatsby-starter-blog",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lewislbr/lewis-gatsby-starter-blog"
+    "url": "https://github.com/whitetig3r/bitwise-engineer"
   },
   "version": "0.1.0",
-  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "gatsby build",

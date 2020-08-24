@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 
 import {
   Button,
@@ -30,22 +29,10 @@ const About = () => {
           and microservices.
           <br /> <br />- Warren White
         </TextBody>
-        <Button href="mailto:warren1linux&#64;gmail.com">Get in touch</Button>
+        <Button href="mailto:warrenmwhite19&#64;gmail.com">Get in touch</Button>
       </Layout>
     </>
   );
 };
 
 export default About;
-
-export const query = graphql`
-  query {
-    RandomPhoto: file(relativePath: { eq: "assets/images/RandomPhoto.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1400) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`;
