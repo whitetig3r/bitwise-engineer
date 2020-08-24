@@ -51,15 +51,15 @@ const Post = styled.div`
 const Home = ({ data }) => {
   return (
     <>
-      <SEO title="Bitwise - A Software Engineering Blog" />
+      <SEO title="A Software Engineering Blog" />
       <HeaderLogo />
       <Layout>
         <Hero>
           <HeadingXL>bitwise</HeadingXL>
           <TextHome>
             byte-sized episodes, experiences & encounters with software
-            engineering from a junior software engineer and graduate computer
-            science student
+            engineering from a software engineer and graduate computer science
+            student
           </TextHome>
         </Hero>
         {data.allMarkdownRemark.edges.map(({ node }) => (

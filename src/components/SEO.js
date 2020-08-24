@@ -22,7 +22,7 @@ export const SEO = ({ title }) => {
     <Helmet
       htmlAttributes={{ lang: `en` }}
       title={title}
-      titleTemplate={`%s - ${data.site.siteMetadata.title}`}
+      titleTemplate={`%s - Bitwise`}
       meta={[
         {
           name: `description`,

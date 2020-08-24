@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Bitwise`,
+    title: ``,
     description: `Byte-sized episodes, experiences and encounters with software engineering from a junior software engineer and grad computer science student`,
     siteUrl: `https://bitwise.engineer`,
   },
@@ -39,14 +39,25 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-166189314-1',
-      },
-    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
+    {
+      resolve: 'gatsby-plugin-google-marketing-platform',
+      options: {
+        dataLayer: {
+          gaPropertyId: 'UA-166189314-1',
+        },
+        tagmanager: {
+          id: 'GTM-PP4LRHB',
+        },
+        analytics: {
+          id: 'UA-166189314-1',
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+    },
   ],
 };
