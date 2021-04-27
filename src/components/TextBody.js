@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { BREAKPOINT } from '../utils/constants';
 
 export const TextBody = styled.div`
-  color: var(--dark-color-light);
   display: block;
   letter-spacing: -0.003em;
   line-height: 1.5;
@@ -17,7 +16,6 @@ export const TextBody = styled.div`
     font-family: OpenSans;
   }
   code {
-    background: whitesmoke;
     font-family: IBMPlexMono;
     overflow-x: scroll;
   }

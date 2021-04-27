@@ -41,6 +41,7 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-dark-mode`,
     `gatsby-plugin-robots-txt`,
     {
       resolve: 'gatsby-plugin-google-marketing-platform',

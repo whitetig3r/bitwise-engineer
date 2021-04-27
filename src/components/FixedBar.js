@@ -5,7 +5,6 @@ import { BREAKPOINT } from '../utils/constants';
 export const FixedBar = styled.header`
   align-items: center;
   backdrop-filter: blur(4px);
-  background-color: var(--light-color-translucent);
   display: flex;
   flex-direction: row;
   height: 8vh;

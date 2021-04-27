@@ -46,6 +46,25 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+body {
+  --bg: var(--light-color);
+  --textNormal: #222;
+  --textTitle: #222;
+  --textLink: blue;
+  --hr: hsla(0, 0%, 0%, 0.2);
+  background-color: var(--bg);
+}
+
+body.dark {
+  color: wheat !important;
+  -webkit-font-smoothing: antialiased;
+  --bg: var(--dark-color);
+  --textNormal: rgba(255, 255, 255, 0.88) !important;;
+  --textTitle: white !important;;
+  --textLink: yellow !important;;
+  --hr: hsla(0, 0%, 100%, 0.2) !important;
+}
+
   div a {
     text-decoration: none;
     color: inherit;

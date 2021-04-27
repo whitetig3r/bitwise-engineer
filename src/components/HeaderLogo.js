@@ -4,9 +4,17 @@ import styled from 'styled-components';
 
 import { FixedBar } from '../components';
 import { BREAKPOINT } from '../utils/constants';
+import { DarkModeToggle } from './DarkModeToggle';
 
 const HeaderWrapper = styled(FixedBar)`
   justify-content: space-between;
+`;
+
+const ToggleAboutWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 6em;
 `;
 
 const Logo = styled.p`
@@ -22,9 +30,12 @@ export const HeaderLogo = () => {
   return (
     <HeaderWrapper>
       <Logo>bitwise</Logo>
-      <Link to="/about">
-        <p>About</p>
-      </Link>
+      <ToggleAboutWrapper>
+        <Link to="/about">
+          <p>About</p>
+        </Link>
+        <DarkModeToggle />
+      </ToggleAboutWrapper>
     </HeaderWrapper>
   );
 };

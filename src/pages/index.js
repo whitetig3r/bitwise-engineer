@@ -23,7 +23,6 @@ const Hero = styled.div`
 `;
 
 const TextHome = styled.p`
-  color: var(--dark-color-light);
   display: block;
   font-size: 22px;
   line-height: 1.6;
