@@ -12,7 +12,7 @@ const MoonToggle = styled.div`
   max-height: 100%;
   width: 34px;
   align-self: center;
-
+  cursor: pointer;
   @media (max-width: ${BREAKPOINT}px) {
     height: 28px;
     width: 28px;

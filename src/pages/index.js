@@ -12,6 +12,7 @@ import {
   SEO,
   TextBody,
   TextDate,
+  TextReadTime,
 } from '../components';
 
 const Hero = styled.div`
@@ -67,6 +68,7 @@ const Home = ({ data }) => {
               <HeadingL>{node.frontmatter.title}</HeadingL>
               <TextBody>{node.excerpt}</TextBody>
               <TextDate>{node.frontmatter.date}</TextDate>
+              <TextReadTime>{node.fields.readingTime.text}</TextReadTime>
             </Post>
           </Link>
         ))}
@@ -89,6 +91,9 @@ export const query = graphql`
           }
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           excerpt
         }

@@ -7,6 +7,7 @@ import {
   Layout,
   SEO,
   TextBody,
+  TextReadTime,
   TextDate,
 } from '../components';
 
@@ -20,6 +21,7 @@ const BlogPost = ({ data }) => {
       <Layout>
         <HeadingXL>{post.frontmatter.title}</HeadingXL>
         <TextDate>{post.frontmatter.date}</TextDate>
+        <TextReadTime>{post.fields.readingTime.text}</TextReadTime>
         <TextBody dangerouslySetInnerHTML={{ __html: post.html }} />
       </Layout>
     </>
@@ -32,6 +34,11 @@ export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        readingTime {
+          text
+        }
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
